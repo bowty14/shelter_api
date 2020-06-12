@@ -7,7 +7,7 @@ describe "post a review route", :type => :request do
   end
 
   it 'returns the dogs name ' do
-    expect(JSON.parse(response.body)['name']).to eq()
+    expect(JSON.parse(response.body)['name']).to eq('Jimmy')
   end
-  
+
 end
