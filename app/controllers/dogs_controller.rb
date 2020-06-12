@@ -1,7 +1,7 @@
 class DogsController < ApplicationController
 
   def index
-    @dogs = Dogs.all 
+    @dogs = Dog.all 
     json_response(@dogs)
   end
 

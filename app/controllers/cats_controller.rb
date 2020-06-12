@@ -1,7 +1,7 @@
 class CatsController < ApplicationController
 
   def index
-    @cats = Cats.all 
+    @cats = Cat.all 
     json_response(@cats)
   end
 
