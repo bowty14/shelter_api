@@ -11,7 +11,7 @@ class CatsController < ApplicationController
   end 
 
   def create 
-    @cat = Cat.create(cat_params)
+    @cat = Cat.create!(cat_params)
     json_response(@cat)
   end
 

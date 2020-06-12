@@ -11,7 +11,7 @@ class DogsController < ApplicationController
   end 
 
   def create 
-    @dog = Dog.create(dog_params)
+    @dog = Dog.create!(dog_params)
     json_response(@dog)
   end
 
