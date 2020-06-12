@@ -17,12 +17,20 @@ class CatsController < ApplicationController
 
   def update 
     @cat = Cat.find(params[:id])
-    @cat.update(cat_params)
+    if @cat.update!(cat_params)
+      render status: 200, json: {
+        message: "This cat has been updated successfully!"
+      }
+    end
   end
 
   def destroy
     @cat = Cat.find(params[:id]) 
-    @cat.destroy
+    if @cat.destroy
+      render status: 200, json: {
+        message: "This cat has been successfully deleted!"
+      }
+    end
   end
 
   private
