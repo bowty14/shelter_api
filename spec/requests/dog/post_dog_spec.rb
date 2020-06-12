@@ -11,7 +11,7 @@ describe "post a review route", :type => :request do
   end
 
   it 'returns the dogs age' do
-    expect(JSON.parse(response.body)['age']).to eq('3')
+    expect(JSON.parse(response.body)['age']).to eq(3)
   end
 
   it 'returns the dogs description' do
@@ -20,5 +20,16 @@ describe "post a review route", :type => :request do
 
   it 'returns the dogs breed' do
     expect(JSON.parse(response.body)['breed']).to eq('Husky')
+  end
+
+  describe "Receice exception on Post dog route", :type => :request do
+    
+    before do
+      post '/dogs', params: {:name => 'Jimmy', :age => 3, :description => 'Very energetic and loving, he enjoys going on walks and playing fetch'} 
+    end
+
+    it 'returns a 422 status' do
+      expect(response).to have_http_status(:unprocessable_entity)
+    end
   end
 end
