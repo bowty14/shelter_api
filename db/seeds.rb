@@ -11,7 +11,7 @@ class Seed
       dog = Dog.create!(
         name: Faker::Creature::Dog.name,
         age: Faker::Number.between(from: 1, to: 10),
-        description: Faker::Hipster.sentence,
+        description: Faker::Hipster.sentence(word_count: 10),
         breed: Faker::Creature::Dog.breed
       )
       puts "Dog #{i}: This dog's name is #{dog.name} they are #{dog.age} years old, they are best described as  #{dog.description}, their breed is #{dog.breed}."
@@ -23,7 +23,7 @@ class Seed
        cat = Cat.create!(
         name: Faker::Creature::Cat.name,
         age: Faker::Number.between(from: 1, to: 10),
-        description: Faker::Hipster.sentence,
+        description: Faker::Hipster.sentence(word_count: 10),
         breed: Faker::Creature::Cat.breed
       )
       puts "Cat #{i}: This cat's name is #{cat.name} they are #{cat.age} years old, they are best described as #{cat.description}, their breed is #{cat.breed}."
