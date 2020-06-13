@@ -15,7 +15,8 @@ This application allows the user create, update, view and delete animals listed 
 |1.get dogs| localhost:3000/dogs| returns a list of all dogs|
 |2.get cats| localhost:3000/dogs|returns a list of all cats|
 |3. POST dogs/cats| localhost:3000/dogs or localhost:3000/cats|creates a new cat or dog|
-|4. Update dogs/cats| 
+|4. Update dogs/cats| localhost:3000/dogs/some number or localhost:3000/cats/some number| updates a cat or dog info by id number.|
+|5. Delete dogs/cats| localhost:3000/dogs/some number or localhost:3000/cats/some number| deletes a cat or dog by id number|
 
 
 
@@ -38,7 +39,7 @@ This application allows the user create, update, view and delete animals listed 
 
 * _To view project in browser type in terminal, `rails s`._
 * _Navigate to localhost:3001_
-* _[this api is live at](https://damp-waters-16331.herokuapp.com)
+* _[click here to see the api live](https://damp-waters-16331.herokuapp.com)
 
 ## Known Bugs
 No known bugs at this time in production. However in testing I am unable to get a integration test for creating a review to pass.
