@@ -33,6 +33,19 @@ class CatsController < ApplicationController
     end
   end
 
+  def random
+    first = Cat.first.id
+    last = first + Cat.count
+    cat_id = rando(first...last)
+    @cat = Cat.find(cat_id)
+    json_response(@cat)
+  end
+
+  def search 
+    @cats = Cat.search_cats(params[:query])
+    json_response(@cats)
+  end
+
   private
   def json_response(object, status = :ok)
     render json: object, status: status
