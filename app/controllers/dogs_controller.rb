@@ -33,6 +33,19 @@ class DogsController < ApplicationController
     end
   end
 
+  def random
+    first = Dog.first.id
+    last = first + Dog.count
+    dog_id = rand(first...last)
+    @dog = Dog.find(dog_id)
+    json_response(@dog)
+  end
+
+  # def search 
+  #   @dogs = Dog.search_dogs(params[:query])
+  #   json_response(@dogs)
+  # end
+
   private
   def json_response(object, status = :ok)
     render json: object, status: status
