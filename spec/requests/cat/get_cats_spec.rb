@@ -12,4 +12,11 @@ describe "get all cats route", :type => :request do
   it 'returns status code 200' do 
     expect(response).to have_http_status(:success)
   end
+
+  it 'returns a random cat' do
+    get '/cats/random'
+    first = Cat.first.id
+    last = first + Cat.count
+    expect(response).to have_http_status(:success)
+  end
 end

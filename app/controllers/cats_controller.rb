@@ -36,7 +36,7 @@ class CatsController < ApplicationController
   def random
     first = Cat.first.id
     last = first + Cat.count
-    cat_id = rando(first...last)
+    cat_id = rand(first...last)
     @cat = Cat.find(cat_id)
     json_response(@cat)
   end
