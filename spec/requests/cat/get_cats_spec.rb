@@ -19,4 +19,10 @@ describe "get all cats route", :type => :request do
     last = first + Cat.count
     expect(response).to have_http_status(:success)
   end
+
+  before {get '/cats/search?query=felix'}
+  it 'returns cats with the name felix' do
+    expect(response).to have_http_status(:success)
+  end
+  
 end
