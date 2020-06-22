@@ -3,6 +3,11 @@ require 'rails_helper'
 describe "get all cats route", :type => :request do 
   let!(:cats) {FactoryBot.create_list(:cat, 20)}
 
+  before {get '/cats/search?query=felix'}
+  it 'returns cats with the name felix' do
+    expect(response).to have_http_status(:success)
+  end
+  
   before {get '/cats'}
 
   it 'returns all cats' do 
@@ -20,9 +25,5 @@ describe "get all cats route", :type => :request do
     expect(response).to have_http_status(:success)
   end
 
-  before {get '/cats/search?query=felix'}
-  it 'returns cats with the name felix' do
-    expect(response).to have_http_status(:success)
-  end
-  
+
 end
